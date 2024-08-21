@@ -14,6 +14,7 @@ dim(gss_cat)
 describe(gss_cat)
 # summarise the tvhours by marital
 tab<-gss_cat %>% 
+  filter(age<30) %>%
   group_by(marital) %>% 
   summarise(mean_tv_hours=mean(tvhours,na.rm = T))
 # enregister le tableau
