@@ -19,5 +19,11 @@ tab<-gss_cat %>%
   summarise(mean_tv_hours=mean(tvhours,na.rm = T))
 # enregister le tableau
 write.csv(tab,here("mean_hours_by_marital.csv"))
+# visualisation
+tab=table(gss_cat$marital)
+tab
+barplot(tab,col=rainbow(6),main="Distribution du statut marital")
+# Distribution de lage
+hist(gss_cat$age, breaks = 8,col="blue",xlab="age")
   
 
